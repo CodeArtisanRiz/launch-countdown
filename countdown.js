@@ -20,9 +20,9 @@ const intervalId = setInterval(() => {
 
     if (timeBetweenDates >= -1 && !codeInjected) {
         if (codeInjected == false){
+            injectJS();
             injectHTML();
             injectCSS();
-            injectJS();
         // Prevent further execution.
             codeInjected = true;
         }
@@ -69,7 +69,7 @@ function injectJS(){
 // TW Injection
     let scriptElement = document.createElement('script');
 // Source URL of the JavaScript file
-    scriptElement.src = 'https://cdn.tailwindcss.com/3.4.1';
+    scriptElement.src = 'https://codeartisanriz.github.io/launch-countdown/vendor/js/tailwind_3.4.1.js';
 // Append the <script> element to the <head> of the document
     document.head.appendChild(scriptElement);
 }
