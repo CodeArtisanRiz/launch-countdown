@@ -4,8 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Launch Countdown</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    button {
+        height: 45px;
+        width: 200px;
+        font-size: 15px;
+        background-color: #00c09d;
+        border: 1px solid #00ab8c;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(87,71,81,.2);
+        cursor: pointer;
+        transition: all 2s ease-out;
+        transition: all .2s ease-out;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    </style>
 </head>
 <body>
-<h1>Coming Soon</h1>
+    <div class="container">
+        <h1>Launch Countdown Demo</h1>
+        <p>Click the button below to start the launch countdown:</p>
+        <button onclick="injectJS();">Launch</button>
+        <button><a href="">Documentation</a></button>
+    </div>
+
+    <script>
+    // Get the current date
+        var currentDate = new Date();
+    // Add 1 day
+        currentDate.setDate(currentDate.getDate() + 1);
+    // Format the date
+        var formattedDate = currentDate.toLocaleString('en-US',{ month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
+
+    // alert(formattedDate);
+        function injectJS(){
+    // JS Injection
+        var scriptElement = document.createElement('script');
+    // Source URL of the JavaScript file
+        scriptElement.src = './countdown.js';
+        scriptElement.setAttribute("date-time", formattedDate);
+    // Append the <script> element to the <head> of the document
+        document.head.appendChild(scriptElement);
+    }
+    </script>
 </body>
 </html>
