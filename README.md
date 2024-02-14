@@ -13,11 +13,11 @@ You can include the launch countdown script in your HTML file by adding the foll
 
 ```
 <script type="text/javascript"
-    date-time="Jan 01, 2030 14:25:00"
+    date-time="Jan 01, 2030 00:00:00"
     src="https://codeartisanriz.github.io/launch-countdown/countdown.js"
 />
 ```
-Replace `Jan 01, 2030 14:25:00` with your desired launch date and time.
+Replace `Jan 01, 2030 00:00:00` with your desired launch date and time.
 
 ## Options
 You can customize the countdown timer by passing additional parameters in the script tag:

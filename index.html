@@ -6,49 +6,63 @@
     <title>Launch Countdown</title>
     <style>
         body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    .container {
-        max-width: 600px;
-        margin: 50px auto;
-        padding: 0 20px;
-    }
-    h1 {
-        font-size: 2em;
-        margin-bottom: 20px;
-    }
-    p {
-        font-size: 1.2em;
-        margin-bottom: 20px;
-    }
-    button {
-        height: 45px;
-        width: 200px;
-        font-size: 15px;
-        background-color: #00c09d;
-        border: 1px solid #00ab8c;
-        color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px 0 rgba(87,71,81,.2);
-        cursor: pointer;
-        transition: all 2s ease-out;
-        transition: all .2s ease-out;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #0056b3;
-    }
+            font-family: 'Roboto';
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            margin-top: 30px;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px;
+            text-align: justify;
+        }
+        button {
+            margin: 10px;
+            height: 45px;
+            width: 200px;
+            font-size: 15px;
+            background-color: #00c09d;
+            border: 1px solid #00ab8c;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px 0 rgba(87,71,81,.2);
+            cursor: pointer;
+            transition: all 2s ease-out;
+            transition: all .2s ease-out;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transition: all .2s ease-out;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Launch Countdown Demo</h1>
-        <p>Click the button below to start the launch countdown:</p>
+        <h1>Launch Countdown</h1>
+        <p>Launch Countdown is a JavaScript package that provides a simple countdown timer for your website or web application. It allows you to display a countdown to a specified date and time, and auto reloads the page when the countdown reaches zero.</p>
+        <p>Use it to build anticipation for product launches, events, or any other important milestones. Click the <strong>Launch</strong> button below to start the launch countdown:</p>
         <button onclick="injectJS();">Launch</button>
-        <button><a href="">Documentation</a></button>
+        <br>
+        <button><a href="https://github.com/CodeArtisanRiz/launch-countdown/blob/main/README.md">Documentation</a></button>
     </div>
 
     <script>
