@@ -56,13 +56,14 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id="contents" class="container">
         <h1>Launch Countdown</h1>
         <p>Launch Countdown is a JavaScript package that provides a simple countdown timer for your website or web application. It allows you to display a countdown to a specified date and time, and auto reloads the page when the countdown reaches zero.</p>
         <p>Use it to build anticipation for product launches, events, or any other important milestones. Click the <strong>Launch</strong> button below to start the launch countdown:</p>
-        <button onclick="injectJS();">Launch</button>
+
+        <button onclick='injectJS();''>Launch</button>
         <br>
-        <button><a href="https://github.com/CodeArtisanRiz/launch-countdown/blob/main/README.md">Documentation</a></button>
+        <button> <a href="https://github.com/CodeArtisanRiz/launch-countdown/blob/main/README.md">Documentation</a></button>
     </div>
 
     <script>
@@ -70,19 +71,29 @@
         var currentDate = new Date();
     // Add 1 day
         currentDate.setDate(currentDate.getDate() + 1);
-    // Format the date
-        var formattedDate = currentDate.toLocaleString('en-US',{ month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
 
+    // Format the date
+        var formattedDate = currentDate.toLocaleString('en-UK', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: false
+        }).replace(',', '');
+
+    // console.warn('Date: ' + formattedDate);
     // alert(formattedDate);
+
         function injectJS(){
-    // JS Injection
-        var scriptElement = document.createElement('script');
-    // Source URL of the JavaScript file
-        scriptElement.src = './countdown.js';
-        scriptElement.setAttribute("date-time", formattedDate);
-    // Append the <script> element to the <head> of the document
-        document.head.appendChild(scriptElement);
-    }
+            document.getElementById("contents").style.display = "none";
+            let scriptElement = document.createElement('script');
+            scriptElement.src = 'https://codeartisanriz.github.io/launch-countdown/countdown.js'; // Source URL of the JavaScript file
+            scriptElement.setAttribute("date-time", formattedDate);
+            // scriptElement.setAttribute("date-time", "Jan 01, 2030 00:00:00");
+            document.body.appendChild(scriptElement); // Append the <script> element to the <head> of the document
+        }
     </script>
 </body>
 </html>
