@@ -20,9 +20,15 @@ const intervalId = setInterval(() => {
 
     if (timeBetweenDates >= -1 && !codeInjected) {
         if (codeInjected == false){
+
             injectJS();
             injectHTML();
             injectCSS();
+
+            document.querySelectorAll('body > :not(#countdown-section)').forEach(function(element) {
+                element.style.display = 'none';
+                element.style.setProperty('display', 'none', 'important');
+            });
         // Prevent further execution.
             codeInjected = true;
         }
