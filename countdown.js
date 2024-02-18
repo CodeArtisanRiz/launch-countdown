@@ -19,11 +19,6 @@ passedDateTime.forEach(function(script) {
             inputDateTime = 'inputDateTime not provided';
         }
 
-
-
-    console.warn(inputDateTimeAttr);
-
-
     let inputTitleAttr = script.getAttribute('title');
     if (typeof inputTitle !== '') {
         inputTitle = inputTitleAttr;
@@ -48,6 +43,8 @@ passedDateTime.forEach(function(script) {
     }
 
 });
+
+console.log(inputDescription);
 
 // Set Launch Time
 const countToDate = new Date(inputDateTime).getTime();
