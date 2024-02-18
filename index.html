@@ -89,8 +89,26 @@
         function injectJS(){
             // document.getElementById("contents").style.display = "none";
             let scriptElement = document.createElement('script');
-            scriptElement.src = 'https://codeartisanriz.github.io/launch-countdown/countdown.js'; // Source URL of the JavaScript file
-            scriptElement.setAttribute("date-time", formattedDate);
+            scriptElement.src = './countdown.js'; // Source URL of the JavaScript file
+            scriptElement.setAttribute(
+                "date-time", formattedDate
+            );
+            scriptElement.setAttribute(
+                "title", "WE'RE LAUNCHING IN"
+            );
+            scriptElement.setAttribute(
+                "credit-text", "powered by"
+            );
+            scriptElement.setAttribute(
+                "credit-url", "http://techno3gamma.in"
+            );
+            scriptElement.setAttribute(
+                "credit-url-name", "Techno3Gamma"
+            );
+            scriptElement.setAttribute(
+                "description", 'Launch Countdown is a JavaScript package that provides a simple countdown timer for your website or web application. It allows you to display a countdown to a specified date and time, and auto reloads the page when the countdown reaches zero'
+            );
+
             // scriptElement.setAttribute("date-time", "Jan 01, 2030 00:00:00");
             document.body.appendChild(scriptElement); // Append the <script> element to the <head> of the document
         }
